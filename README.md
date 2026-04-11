@@ -76,7 +76,7 @@ for page in range(1, 20):  # Change 20 to scrape more or fewer pages
 ---
 
 Below is a preview of the generated Excel report:
-![Excel Preview](assets/excel-preview.png)
+![Excel Preview](excel-preview.png)
 
 
 ## License
