@@ -68,7 +68,7 @@ To change the search query or page limit, edit these lines in `main.py`:
 ---
 
 Below is a preview of the generated Excel report:
-![Excel Preview](excel-preview.png)
+![Excel Preview](excell-preview.png)
 
 ## License
 MIT
