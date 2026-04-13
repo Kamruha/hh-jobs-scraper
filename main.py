@@ -23,7 +23,16 @@ for page in range(1, 20):
 
     # Build URL with current page number, search by vacancy name only
     url = f'https://hh.ru/search/vacancy?text=python+developer&search_field=name&page={page}'
-    response = requests.get(url, headers=headers)
+
+    # Send request with timeout; skip page on network error or bad status
+    try:
+        response = requests.get(url, headers=headers, timeout=10)
+        if response.status_code != 200:
+            print(f'Page {page}: status {response.status_code}, skipping...')
+            continue
+    except requests.exceptions.RequestException as e:
+        print(f'Request error on page {page}: {e}')
+        continue
 
     # Parse HTML response
     soup = BeautifulSoup(response.text, 'html.parser')
